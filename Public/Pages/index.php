@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" href="../Bootstrap/css/bootstrap.min.css">
 
-    <title>Cadastro</title>
+    <title>Sistema de Login</title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Cadastro</a>
+            <a class="navbar-brand" href="index.php">Sistema de login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -33,10 +33,10 @@
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=novo">Novo Usuario</a>
+                            <a class="nav-link" href="?page=cadastrar">Novo Usuario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=listar">Listar Usuarios</a>
+                            <a class="nav-link" href="?page=logar">Logar</a>
                         </li>
 
                     </ul>
@@ -50,11 +50,11 @@
                 <?php
                 include_once('../../Server/db/conexao.php');
                 switch (@$_REQUEST["page"]) {
-                    case "novo":
+                    case "cadastrar":
                         include("criarUsuario.php");
                         break;
-                    case "listar":
-                        include("listarUsuario.php");
+                    case "logar":
+                        include("logarUsuario.php");
                         break;
                     case "salvar":
                         include("../../Server/Model/userModel.php");
